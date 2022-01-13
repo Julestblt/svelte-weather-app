@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from '$lib/utils/classnames';
+	import type { Rounded } from '$lib/types/tailwind.types';
 
 	type Position = 'left' | 'right';
 
