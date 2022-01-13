@@ -4,7 +4,9 @@ module.exports = {
 	// add this section
 	purge: ['./src/**/*.html', './src/**/*.svelte'],
 	theme: {
-		extend: {}
+		fontFamily: {
+			sans: ["'Raleway'", 'sans-serif;']
+		}
 	},
 	variants: {
 		extend: {}
