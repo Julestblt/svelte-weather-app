@@ -1,5 +1,8 @@
 <script lang="ts">
 	import '../app.css';
+	import { initLocation } from '$lib/utils/navigator.location';
+	import { onMount } from 'svelte';
+	onMount(() => initLocation());
 </script>
 
 <svelte:head>
