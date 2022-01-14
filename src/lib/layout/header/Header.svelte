@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
 	import { getNavigatorGeoLocation } from '$lib/utils/navigator.location';
-	import { weatherState, todayWeather, isLoading } from '$lib/stores';
+	import { weatherState, todayWeather, isLoading } from '$lib/stores/';
 	import { imagePath } from '$lib/utils/weather.images';
 	import { getFormatedDate } from '$lib/utils/date';
 	import Loader from '$lib/components/loader/Loader.svelte';

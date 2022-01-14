@@ -3,7 +3,7 @@
 	import { debounce } from '$lib/utils/debounce';
 	import { createEventDispatcher } from 'svelte';
 	import { useProxyAPI } from '$lib/api/proxy';
-	import { setSelectedLocation, setQueryResults, queryResults } from '$lib/stores';
+	import { setSelectedLocation, setQueryResults, queryResults } from '$lib/stores/';
 	const { useQuery } = useProxyAPI;
 	const dispatch = createEventDispatcher();
 

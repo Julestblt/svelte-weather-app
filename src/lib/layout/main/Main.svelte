@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { upcomingWeather, todayWeather } from '$lib/stores';
+	import { upcomingWeather, todayWeather } from '$lib/stores/';
 	import { getFormatedDate } from '$lib/utils/date';
 	import { imagePath } from '$lib/utils/weather.images';
 	import SmallCard from '$lib/components/cards/SmallCard.svelte';
 	import Card from '$lib/components/cards/Card.svelte';
 	import Progress from '$lib/components/progress/Progress.svelte';
-
-	$: console.log($todayWeather);
 </script>
 
 {#if $upcomingWeather}
