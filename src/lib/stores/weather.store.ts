@@ -1,4 +1,4 @@
-import { selectedLocation } from './';
+import { selectedLocation } from './index';
 import { derived, writable } from 'svelte/store';
 import { useProxyAPI } from '$lib/api/proxy';
 import type { Location } from '$lib/types/location.types';
