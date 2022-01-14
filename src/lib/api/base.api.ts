@@ -1,3 +1,4 @@
+import { setIsLoading } from '$lib/stores/';
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
 /**
@@ -13,9 +14,12 @@ const useFetch: (
 	url: string,
 	config: Partial<RequestInit>
 ) => Promise<any> = async (method, url, config) => {
+	setIsLoading(true);
 	const initConfig = { ...config, method };
 
 	const response = await fetch(url, initConfig);
+	setIsLoading(false);
+
 	return response;
 };
 
