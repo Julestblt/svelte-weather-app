@@ -3,6 +3,8 @@
 	import Main from '$lib/layout/main/Main.svelte';
 </script>
 
-<Header />
+<div class="flex flex-col md:flex-row h-auto md:h-screen">
+	<Header />
 
-<Main />
+	<Main />
+</div>

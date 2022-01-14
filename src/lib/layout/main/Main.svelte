@@ -8,8 +8,8 @@
 </script>
 
 {#if $upcomingWeather}
-	<main class="bg-[#100E1D] text-white pt-12">
-		<section class="grid grid-cols-2 px-10 gap-6">
+	<main class="bg-[#100E1D] text-white pt-12 w-full md:w-[60%]">
+		<section class="grid grid-cols-2 px-10 gap-6 md:grid-cols-3 lg:grid-cols-5 md:p-[100px]">
 			{#each $upcomingWeather as { applicable_date, weather_state_abbr, max_temp, min_temp }}
 				<SmallCard
 					title={getFormatedDate(applicable_date)}
@@ -19,31 +19,33 @@
 				/>
 			{/each}
 		</section>
-		<section class="px-4 py-4">
-			<h2 class="text-[24px] font-bold">Today's Hightlights</h2>
-			<Card title="Wind status">
-				<p class="text-[64px] font-bold">
-					{$todayWeather.wind_speed.toFixed()}<span class="text-[36px] font-normal">mph</span>
-				</p>
-			</Card>
-			<Card title="Humidity">
-				<p class="text-[64px] font-bold">
-					{$todayWeather.humidity}<span class="text-[36px] font-normal">%</span>
-				</p>
-				<Progress value={$todayWeather.humidity} min="0" max="100" />
-			</Card>
-			<Card title="Visibility">
-				<p class="text-[64px] font-bold">
-					{$todayWeather.visibility.toFixed(1).replace('.', ',')}<span
-						class="text-[36px] font-normal ml-5">miles</span
-					>
-				</p>
-			</Card>
-			<Card title="Air Pressure">
-				<p class="text-[64px] font-bold">
-					{$todayWeather.air_pressure}<span class="text-[36px] font-normal ml-5">mb</span>
-				</p>
-			</Card>
+		<section class="px-4 py-4 md:px-[100px]">
+			<h2 class="text-[24px] font-bold md:mb-2">Today's Hightlights</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
+				<Card title="Wind status">
+					<p class="text-[64px] font-bold">
+						{$todayWeather.wind_speed.toFixed()}<span class="text-[36px] font-normal">mph</span>
+					</p>
+				</Card>
+				<Card title="Humidity">
+					<p class="text-[64px] font-bold">
+						{$todayWeather.humidity}<span class="text-[36px] font-normal">%</span>
+					</p>
+					<Progress value={$todayWeather.humidity} min="0" max="100" />
+				</Card>
+				<Card title="Visibility">
+					<p class="text-[64px] font-bold">
+						{$todayWeather.visibility.toFixed(1).replace('.', ',')}<span
+							class="text-[36px] font-normal ml-5">miles</span
+						>
+					</p>
+				</Card>
+				<Card title="Air Pressure">
+					<p class="text-[64px] font-bold">
+						{$todayWeather.air_pressure}<span class="text-[36px] font-normal ml-5">mb</span>
+					</p>
+				</Card>
+			</div>
 		</section>
 	</main>
 {/if}

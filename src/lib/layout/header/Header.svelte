@@ -12,7 +12,7 @@
 	const menuHandler = () => (hideMenu = !hideMenu);
 </script>
 
-<header class="bg-[#1E213A] h-screen md:h-auto">
+<header class="bg-[#1E213A] h-screen md:h-auto md:w-[40%]">
 	<section class="flex justify-between pt-4 px-3">
 		<Button on:click={menuHandler} backgroundColor="bg-[#6E707A]" textColor="text-[#E7E7EB]"
 			>Search for places</Button
@@ -59,6 +59,8 @@
 			<Loader width="w-12" height="h-12" />
 		</div>
 	{:else}
-		<h1>Select a city or turn on location</h1>
+		<div class="w-full flex justify-center items-center pt-10">
+			<h1 class="text-white text-3xl text-center font-bold">Select a city or turn on location</h1>
+		</div>
 	{/if}
 </header>

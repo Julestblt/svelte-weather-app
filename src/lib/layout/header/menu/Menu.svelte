@@ -29,7 +29,7 @@
 </script>
 
 {#if !hide}
-	<section class="absolute top-0 z-50 bg-[#1E213A] h-screen w-screen">
+	<section class="absolute top-0 z-50 bg-[#1E213A] h-screen w-screen md:w-[40%]">
 		<div class="inline-block w-full">
 			<button on:click={closeHandler} class="float-right material-icons text-white p-2"
 				>close</button
