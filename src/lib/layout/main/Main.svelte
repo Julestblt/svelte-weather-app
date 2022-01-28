@@ -7,8 +7,8 @@
 	import Progress from '$lib/components/progress/Progress.svelte';
 </script>
 
-{#if $upcomingWeather}
-	<main class="bg-[#100E1D] text-white pt-12 w-full md:w-[60%]">
+<main class="bg-[#100E1D] text-white pt-12 w-full md:w-[60%]">
+	{#if $upcomingWeather}
 		<section class="grid grid-cols-2 px-10 gap-6 md:grid-cols-3 lg:grid-cols-5 md:p-[100px]">
 			{#each $upcomingWeather as { applicable_date, weather_state_abbr, max_temp, min_temp }}
 				<SmallCard
@@ -19,8 +19,8 @@
 				/>
 			{/each}
 		</section>
-		<section class="px-4 py-4 md:px-[100px]">
-			<h2 class="text-[24px] font-bold md:mb-2">Today's Hightlights</h2>
+		<section class="px-4 md:px-[100px]">
+			<h2 class="text-[24px] mt-5 md:mt-0 font-bold md:mb-2">Today's Hightlights</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 md:gap-8">
 				<Card title="Wind status">
 					<p class="text-[64px] font-bold">
@@ -47,5 +47,5 @@
 				</Card>
 			</div>
 		</section>
-	</main>
-{/if}
+	{/if}
+</main>
