@@ -2,7 +2,6 @@ import { useFetch } from '../base.api';
 import { buildUrl } from '$lib/utils/url';
 import type { HttpMethod } from '../base.api';
 import type { QueryParams } from '$lib/utils/url';
-import { getProxyBaseUrl } from '$lib/utils/env.variables';
 
 const useProxy: (
 	method: HttpMethod,
@@ -15,8 +14,9 @@ const useProxy: (
 		credentials: 'same-origin',
 		mode: 'cors'
 	};
-	const proxyBaseUrl = getProxyBaseUrl as string;
-	const url = buildUrl(proxyBaseUrl, endpoint, queryParams);
+	const baseUrl = window.location.protocol + '//' + window.location.host + '/api';
+	const url = buildUrl(baseUrl, endpoint, queryParams);
+
 	const response = await useFetch(method, url, config);
 	return response.json();
 };
